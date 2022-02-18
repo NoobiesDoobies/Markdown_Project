@@ -13,10 +13,15 @@ app.set("views", "ejs")
 app.get("/", (req, res) =>{
     const articles = [{
         title: "Test Article",
-        createdAt: Date.now(),
+        createdAt: new Date(),
         description: "Test description"
+    },
+    {
+        title: "Test Article2",
+        createdAt: new Date(),
+        description: "Test description2"
     }]
-    res.render("html", {articles:articles})
+    res.render("articles/index", {articles:articles})
 })
 
 
