@@ -2,6 +2,11 @@ const express = require("express")
 const app = express()
 const port = 3000;
 const articleRouter = require("./routes/articles")
+const mongoose = require("mongoose")
+
+mongoose.connect("mongodb://localhost/blog")
+
+app.use(express.urlencoded({ extended : false}))
 
 
 // untuk baca html
